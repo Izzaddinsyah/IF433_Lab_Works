@@ -40,4 +40,32 @@ fun main() {
 
     val luasLingkaran = mathHelper.hitungLuas(7.0)
     println("Luas Lingkaran: $luasLingkaran")
+
+    fun main() {
+
+        println("=== SISTEM PEMBAYARAN ===")
+
+        val ewallet = EWallet("Faiz", 50000.0)
+        val creditCard = CreditCard("Faiz", 100000.0)
+
+        val metodePembayaran: List<PaymentMethod> = listOf(ewallet, creditCard)
+
+        for (payment in metodePembayaran) {
+
+            payment.processPayment(75000.0)
+
+            // Smart Casting
+            if (payment is EWallet) {
+
+                println("Top up otomatis karena saldo kurang")
+
+                payment.topUp(50000.0)
+
+                payment.processPayment(75000.0)
+
+            }
+
+            println("----------------------")
+        }
+    }
 }
