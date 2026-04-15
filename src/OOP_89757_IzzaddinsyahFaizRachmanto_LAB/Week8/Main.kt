@@ -45,4 +45,13 @@ fun Main() {
     } catch (e: NullPointerException) {
         println("CRASH (NPE)! Jangan gunakan !! secara sembanrangan.")
     }
+
+    val apiRsponse: Map<String, String?> = mapOf("status" to "200", "token" to null)
+    try{
+        val token = requireNotNull(apiRsponse["token"]){
+            "CRITICAL EXCEPTION: Token otentifikasi tidak ditemukan dari server!"
+        }
+    } catch (e: IllegalArgumenException) {
+        println(e.message)
+    }
 }
