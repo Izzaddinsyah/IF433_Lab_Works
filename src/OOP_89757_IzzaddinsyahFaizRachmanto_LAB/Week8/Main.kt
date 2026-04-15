@@ -51,7 +51,7 @@ fun Main() {
         val token = requireNotNull(apiRsponse["token"]){
             "CRITICAL EXCEPTION: Token otentifikasi tidak ditemukan dari server!"
         }
-    } catch (e: IllegalArgumenException) {
+    } catch (e: IllegalArgumentException) {
         println(e.message)
     }
 }
