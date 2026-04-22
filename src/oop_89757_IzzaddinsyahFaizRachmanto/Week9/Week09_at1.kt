@@ -36,6 +36,28 @@ arMatkul.add("Algo");
     arMahasiswa.remove("Udin");
     arMahasiswa.add("Udin");
     println(arMahasiswa);
+    println("========== MAP IMUT =========");
+    val arResto = mapOf(
+        "Ayam" to 5000,
+        "Bakpao" to 3000,
+        "Sayur asem" to 2500
+    );
+    println("Banyak menu: ${arResto.size}");
+    println("Harga ayam ${arResto["Ayam"]}");
+    println("List makanan: ${arResto.keys}");
+    println("List Harga: ${arResto.values}");
+    println(arResto);
 
+    println("========== MAP MUTABLE =========");
+    val arKHS = mutableMapOf(
+        "Toni" to 80,
+        "Nika" to 85,
+        "Ara" to 87,
+        "Davin" to 90
+    );
+    arKHS.remove("Ara");
+    arKHS["Nika"] = 92
+    arKHS["Cinta"] = 99
+    println(arKHS);
 }
 
