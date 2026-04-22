@@ -11,4 +11,22 @@ fun main() {
         TradeLog("ADAUSDT", "SHORT", 7, -2.1, "OPEN"),
         TradeLog("BNBUSDT", "LONG", 10, 11.8, "CLOSED")
     )
+
+    fun main() {
+        val tradeHistory = listOf(
+            TradeLog("BTCUSDT", "LONG", 20, 15.5, "CLOSED"),
+            TradeLog("ETHUSDT", "SHORT", 10, -5.2, "CLOSED"),
+            TradeLog("BTCUSDT", "SHORT", 15, 8.7, "CLOSED"),
+            TradeLog("SOLUSDT", "LONG", 8, -12.4, "CLOSED"),
+            TradeLog("ETHUSDT", "LONG", 12, 0.0, "CLOSED"),
+            TradeLog("XRPUSDT", "LONG", 5, 6.3, "OPEN"),
+            TradeLog("ADAUSDT", "SHORT", 7, -2.1, "OPEN"),
+            TradeLog("BNBUSDT", "LONG", 10, 11.8, "CLOSED")
+        )
+
+        val closedTrades = tradeHistory
+            .filter { it.status == "CLOSED" }
+
+        println(closedTrades)
+    }
 }
