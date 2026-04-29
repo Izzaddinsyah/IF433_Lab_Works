@@ -9,10 +9,15 @@ fun main() {
 
     val response = ApiResponse("200 OK", coinRepo.getAll())
 
+    println("=== CRYPTO WALLET DASHBOARD ===")
     println("Status: ${response.status}")
+    println()
 
+    println("Coin List:")
     response.data.forEach { coin ->
-        println("Coin: ${coin.name}, Balance: ${coin.balance}")
+        println("Coin: ${coin.name}")
+        println("Balance: ${coin.balance}")
+        println("---------------------")
     }
 
     val txRepo = WalletRepository<Transaction>()
@@ -20,4 +25,18 @@ fun main() {
     txRepo.add(Transaction("TX001", 500.0))
     txRepo.add(Transaction("TX002", 1200.0))
     txRepo.add(Transaction("TX003", 750.0))
+
+    println()
+    println("Transaction List:")
+    txRepo.getAll().forEach { tx ->
+        println("Transaction ID: ${tx.id}")
+        println("Amount: ${tx.amount}")
+        println("---------------------")
+    }
+
+    println()
+    println("Search Result:")
+    coinRepo.search("BTC").forEach {
+        println(it)
+    }
 }
