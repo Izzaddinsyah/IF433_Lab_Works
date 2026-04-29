@@ -1,5 +1,8 @@
 package OOP_89757_IzzaddinsyahFaizRachmanto_LAB.Week10
 
 fun <T> printData(data: T) {
-    println("Data yang diterima:$data")
+    println("Data yang diterima: $data")
+    fun <t> processData(input: T): T {
+        return input
+    }
 }
