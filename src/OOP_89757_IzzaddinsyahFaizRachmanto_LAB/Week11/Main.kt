@@ -67,4 +67,15 @@ fun main() {
     searchResult?.let {
         println(it.diagnose())
     }
+    println("\n=== DASHBOARD SUMMARY ===")
+    with(homeDevices) {
+        println("Total perangkat terdaftar: ${this.size}")
+    }
+
+    // CHECKPOINT 19: Kalkulasi daya menggunakan run
+    val totalPower = homeDevices.run {
+        sumOf { it.powerLoad }
+    }
+
+    println("Total penggunaan daya: $totalPower Watt")
 }
