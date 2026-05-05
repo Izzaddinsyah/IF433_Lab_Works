@@ -39,4 +39,12 @@ fun main() {
         println("User baru berhasil dibuat: $it")
     }
     val homeDevices = mutableListOf<SmartDevice>()
+    SmartDevice("", "").apply {
+        name = "Philips WiZ Living Room"
+        category = "Lighting"
+        isOnline = true
+        powerLoad = 12
+    }.also {
+        homeDevices.add(it)
+    }
 }
