@@ -78,4 +78,5 @@ fun main() {
     }
 
     println("Total penggunaan daya: $totalPower Watt")
+
 }
