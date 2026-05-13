@@ -23,7 +23,23 @@ fun cek_tipe_data(){
     println("Angka kamu adalah ${angka}");
 }
 
+//Throw
+fun cek_saldo(saldoSaya: Int){
+    if(saldoSaya < 1000){
+        throw IllegalArgumentException("Saldo ${saldoSaya} tidak perlu bayar pajak")
+    } else {
+        println("Selamat kamu orang kaya");
+    }
+}
+
 fun main() {
+    //coba Throw
+    try {
+        cek_saldo(900);
+    } catch (e: Exception){
+        println("Error diThrow: ${e.message}");
+    }
+
     //Exception - Expression
     cek_tipe_data();
 
