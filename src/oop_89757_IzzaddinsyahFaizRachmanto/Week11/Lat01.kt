@@ -1,4 +1,4 @@
-package OOP_89757_IzzaddinsyahFaizRachmanto_LAB.Week11
+package oop_89757_IzzaddinsyahFaizRachmanto.Week11
 
 //Function biasa
 fun panggil_nama(nama:String):String{
