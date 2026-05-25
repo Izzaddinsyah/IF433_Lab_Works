@@ -32,7 +32,46 @@ fun cek_saldo(saldoSaya: Int){
     }
 }
 
+//custom Exception
+class CekNilaiKKM(val kkm: Int, val nilai:Int): Exception("Nilai $nilai berada dibawah kkm $kkm")
+
+class nilai_siswa(val kkm:Int){
+    fun input_nilai(nilaiKamu:Int){
+        if (nilaiKamu < kkm) {
+            throw CekNilaiKKM(kkm, nilaiKamu);
+        } else {
+            println("Kamu lulus, dengan nilai $nilaiKamu");
+        }
+    }
+}
+
+//multiple Catch
+fun contoh_multiple_catch(nilai:String){
+    try {
+        val angka: Int = Integer.parseInt(nilai);
+        val hasil: Int = angka/2;
+        println("Hasil nilainya: $hasil");
+        cek_saldo(100);
+    } catch (e: NumberFormatException) {
+        println("Error salah format ${e.message}");
+    } catch (e: ArithmeticException) {
+        println("Error kesalahan Aritmatika ${e.message}");
+    } catch (e: Exception) {
+        println("Error program : ${e.message}");
+    }
+}
+
 fun main() {
+    contoh_multiple_catch("100")
+
+    //panggil class custom Exception
+    val nsiswa = nilai_siswa(70);
+    try {
+        nsiswa.input_nilai(60);
+    } catch (e: Exception){
+        println("ada error di input nilai ${e.message}");
+    }
+
     //coba Throw
     try {
         cek_saldo(900);
