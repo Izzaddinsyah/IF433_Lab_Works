@@ -56,33 +56,13 @@ fun main() {
 
     val trades = listOf(
 
-        TradeRecord(
-            1,
-            "BTCUSDT",
-            "Long",
-            100.0,
-            25.5
-        ),
+        TradeRecord(1, "BTCUSDT", "Long", 100.0, 25.5),
+        TradeRecord(2, "ETHUSDT", "Short", 80.0, -10.0),
+        TradeRecord(3, "BNBUSDT", "Long", 50.0, 7.5)
 
-        TradeRecord(
-            2,
-            "ETHUSDT",
-            "Short",
-            80.0,
-            -10.0
-        ),
-
-        TradeRecord(
-            3,
-            "BNBUSDT",
-            "Long",
-            50.0,
-            7.5
-        )
     )
 
     saveTrades(trades, "crypto_trades.csv")
-
 
     File("crypto_trades.csv")
         .appendText("CORRUPT_ID,DOGEUSDT,Hold,XX,YY\n")
